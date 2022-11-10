@@ -8,7 +8,7 @@ class KeyServiceSpec extends PlaySpec {
 
   "Key Service" must {
     "create random keys " in {
-      keyService.createKey("ea.com").get.length mustBe 7
+      keyService.createKey().get.length mustBe 7
     }
   }
 

@@ -9,6 +9,10 @@ import play.api.Configuration
 import javax.inject.{Inject, Singleton}
 import scala.concurrent.Future
 
+/**
+ * Data store implementation for redis
+ * @param config
+ */
 @Singleton
 class RedisDataStore @Inject() (config: Configuration)  extends DataStore {
 

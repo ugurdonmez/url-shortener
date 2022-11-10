@@ -24,7 +24,7 @@ class UrlShortServiceSpec  extends PlaySpec with MockitoSugar {
 
     "create new short url when new long url called" in {
       when(mockRedisStore.get("http://google.com")).thenReturn(Option.empty)
-      when(mockKeyService.createKey("http://google.com")).thenReturn(Some("1234567"))
+      when(mockKeyService.createKey()).thenReturn(Some("1234567"))
       when(mockRedisStore.save("http://google.com", "1234567")).thenReturn(true)
       when(mockRedisStore.save("1234567", "http://google.com")).thenReturn(true)
 

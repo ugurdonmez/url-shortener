@@ -35,10 +35,19 @@ class HomeController @Inject()(
 
   var urlUtil = new UrlUtils()
 
+  /**
+   * Load index file
+   * @return
+   */
   def index() = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.main())
   }
 
+  /**
+   * Redirect to original url
+   * @param key
+   * @return
+   */
   def lookup(key: String) = Action.async {
     Future {
       val shortUrl = urlRedirectService.getRedirectUrl(key)
@@ -55,6 +64,11 @@ class HomeController @Inject()(
     }(myExecutionContext)
   }
 
+  /**
+   * Create short url from original url
+   * @param url
+   * @return
+   */
   def create(url: String) = Action.async {
     val trimUrl = urlUtil.trimUrl(url)
 
