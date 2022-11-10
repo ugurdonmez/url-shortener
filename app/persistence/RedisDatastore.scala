@@ -19,7 +19,7 @@ class RedisDataStore @Inject() (config: Configuration)  extends DataStore {
   val redisHost = config.get[String]("redis.host")
   val redisPort = config.get[Int]("redis.port")
 
-  val redis = new RedisClient(redisHost, redisPort)
+  var redis = new RedisClient(redisHost, redisPort)
 
   def save(key: String, value: String): Boolean = {
     redis.set(key, value)

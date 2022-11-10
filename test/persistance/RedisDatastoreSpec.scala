@@ -19,6 +19,7 @@ class RedisDatastoreSpec extends PlaySpec with MockitoSugar {
   when(mockRedis.get("key")).thenReturn(Some("value"))
 
   val dataStore = new RedisDataStore(mockConfig)
+  dataStore.redis = mockRedis
 
   "Redis DB " must {
     "store key value" in {
