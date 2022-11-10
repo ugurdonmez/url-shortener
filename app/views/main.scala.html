@@ -1,0 +1,52 @@
+@*
+* This template is called from the `index` template. This template
+* handles the rendering of the page header and body tags. It takes
+* two arguments, a `String` for the title of the page and an `Html`
+* object to insert into the body of the page.
+*@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>url Short</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" media="screen" href='@routes.Assets.versioned("stylesheets/main.css")'>
+        <link rel="stylesheet" media="screen" href='@routes.Assets.versioned("stylesheets/prism.css")'>
+        <link rel="shortcut icon" type="image/png" href='@routes.Assets.versioned("images/favicon.png")'>
+        <script src='@routes.Assets.versioned("javascripts/hello.js")' type="text/javascript"></script>
+        <script src='@routes.Assets.versioned("javascripts/prism.js")' type="text/javascript"></script>
+    </head>
+
+    <body>
+
+
+        <h1 id="sample-markdown-url-shortener">URL Shortener</h1>
+        <h2 id="tech-stack">Tech stack</h2>
+        <ul>
+            <li><a href="https://www.scala-lang.org/">Scala</a></li>
+            <li><a href="https://www.playframework.com/">Play Framework</a></li>
+            <li><a href="https://github.com/antirez/redis">Redis</a></li>
+            <li><a href="http://www.scalatest.org/">ScalaTest</a></li>
+            <li><a href="https://github.com/mockito/mockito">Mockito</a></li>
+            <li><a href="https://www.docker.com/">Docker</a></li>
+        </ul>
+        <h2 id="commands">Commands</h2>
+        <h3 id="run">Run</h3>
+        <p>Run <code>docker-compose</code>, it will start <code>api</code>, <code>redis</code> and will expose api port to host.</p>
+        <pre><code class="lang-sh"><span class="hljs-attribute">docker-compose up</span>
+        </code></pre>
+        <h3 id="test">Test</h3>
+        <pre><code class="lang-sh">sbt <span class="hljs-built_in">test</span>
+</code></pre>
+        <h2 id="sample-usage">Sample usage</h2>
+        <pre><code class="lang-sh">
+            <span class="hljs-attr"># Shorten
+            curl -X POST http://localhost:9000
+            <span class="hljs-attr"># Call shortened url
+            curl -X GET http://localhost:9000</span>/igDpdNx</span>
+        </code></pre>
+
+    </body>
+
+</html>

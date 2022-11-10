@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  sbt:
+    depends_on:
+      - redis
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: sbt
+    ports:
+      - "9000:9000"
+    volumes:
+      - "./:/root/build"
+
+  redis:
+    image: redis:alpine
+    read_only: true
+    volumes:
+      - redis:/data
+    user: redis
+    expose:
+      - 6379
+
+volumes:
+  redis:
