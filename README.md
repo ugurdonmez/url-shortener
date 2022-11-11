@@ -27,7 +27,7 @@ sbt test
 
 ```sh
 # Shorten
-curl -X POST http://localhost:9000/url=http%3A%2F%2Fyaho2o.com
+curl -X POST http://localhost:9000/url=http%3A%2F%2Fyahoo.com
 
 # Call shortened url
 curl -X GET http://localhost:9000/igDpdNx
