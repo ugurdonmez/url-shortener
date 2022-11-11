@@ -1,9 +1,3 @@
-#FROM adoptopenjdk/openjdk11
-#
-#ENTRYPOINT ["java" ,"-jar", "/app/app.jar"]
-#
-#ADD ./target/scala-2.13/short-url_2.13-1.0-SNAPSHOT.jar /app/app.jar
-
 FROM openjdk:11.0.11
 
 ARG SBT_VERSION=1.7.2
